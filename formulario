@@ -1,0 +1,43 @@
+<?php
+$nombre = $_GET['nombre_usu'];
+$habitacion = $_GET['numero_hab'];
+$celular = $_GET['numero_cel'];
+$telefono = $_GET['numero_tel'];
+$otro = $_GET['otro'];
+
+echo "<h2>Informacion del usuario</h2>";
+echo "El Nombre del Usuario es:". $nombre ."<br/>";
+echo "El Numero de Habitacion es:". $habitacion ."<br/>";
+echo "El Numero de Celular es:". $celular ."<br/>";
+echo "El Numero de Telefono es:". $telefono ."<br/>";
+echo "Otro Numero de Telefono es:". $otro ."<br/>";
+
+?>
+
+index.html
+
+<html>
+<head>
+<title>Formulario de usuarios</title>
+<meta charset="utf8">
+</head>
+<body>
+
+<!--FORMULARIO-->
+<fieldset>
+<legend>FORMULARIO </legend>
+<form action="index2.php" method="get">
+<p>Nombre de Usuario:<input type="text" name="nombre_usu" size="50" placeholder="Escriba el nombre de usuario" /></p><p>
+<p>Numero de Habitacion:<input type="number" name="numero_hab" size="6"placeholder="Escriba el numero de Habitacion" /></p>
+<p>Numero de Celular:<input type="tel" name="numero_cel" size="10" placeholder="Escriba el numero de celular"/></p>
+<p>Numero de Telefono:<input type="tel" name="numero_tel" size="10" placeholder="Escriba el numero de telefono"/></p>
+<p>Otro numero:<input type="tel" name="otro" size="10" placeholder="Escriba otro numero de telefono"/></p>
+<p>Contraseña:<input type="password" name="contraseña" size="50" placeholder="Escriba su contraseña"/></p>
+<p>Confirmar Contraseña:<input type="password" name="con_contraseña" size="50" placeholder="confirmacion de contraseña"/></p>
+</fieldset>
+<p><input type="submit" value="listar"/>
+<input type="submit" value="Editar"/>
+<input type="submit" value="Crear"/>
+<input type="reset" value="Borrar"/></p>
+</body>
+</html>
