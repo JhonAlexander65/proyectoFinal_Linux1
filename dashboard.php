@@ -27,8 +27,9 @@
     #echo "Prom Uso=".$avgRam."<br>";
 
     #Disco
-    exec ( "df | tail -n +2 | awk {'print \"['\''\" $6 \"'\'','\''/'\'', \" $3\", \" $4 \"],\"'}", $disco );
-    #echo "<pre>"; foreach ( $disco as $linea ){echo $linea . "\n";} echo "</pre>";
+    #du -d1 /* 2>/dev/null
+    exec ( "df -m -xtmpfs -xdevtmpdfs| tail -n +2 | awk {'print \"['\''\" $6 \"'\'','\''/'\'', \" $3\", \" $4 \"],\"'}", $disco );
+    #echo "<pre>"; foreach ( $disco as $linea ){echo str_replace('-','0',$linea) . "\n";} echo "</pre>";
 
     #Tabla Procesos
     
@@ -94,7 +95,7 @@
         var data = google.visualization.arrayToDataTable([
           ['Location', 'Parent', 'Market trade volume (size)', 'Market increase/decrease (color)'],
           ['/', null, 0, 0],
-          <?php foreach ( $disco as $linea ){echo $linea . "\n";} ?>
+          <?php foreach ( $disco as $linea ){echo str_replace('-','0',$linea) . "\n";} ?>
         ]);
 
         tree = new google.visualization.TreeMap(document.getElementById('discoChart_div'));

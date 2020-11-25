@@ -1,0 +1,4 @@
+AuthName "Introduce nombre de usuario y contraseña"
+AuthType Basic
+AuthUserFile /home/jgcarvajal/public_html/autenticacion/.htpasswd
+require valid-user
